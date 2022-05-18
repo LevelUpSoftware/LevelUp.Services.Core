@@ -1,0 +1,8 @@
+
+*.v2
+*/bin
+*/obj
+*/.vs
+*/TestResults
+*.DotSettings.user
+*.vs
