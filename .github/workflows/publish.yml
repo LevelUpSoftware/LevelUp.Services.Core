@@ -23,6 +23,5 @@ jobs:
       run: dotnet build --no-restore
       
     - name: Run Pack
-      run: dir
-      #run: dotnet pack src/LevelUp.Services.Core/LevelUp.Services.Core.csproj -o ./artifacts --configuration ${{ env.config }}
+      run: dotnet pack LevelUp.Services.Core/LevelUp.Services.Core.csproj -o ./artifacts --configuration ${{ env.config }}
       shell: bash
