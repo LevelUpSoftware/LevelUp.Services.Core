@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 using LevelUp.Services.Core.Pagination;
 
 namespace LevelUp.Services.Core.BaseCrudServices.ReadServiceBase;
-
+/// <summary>
+/// CRUD services. Read service base.
+/// </summary>
+/// <typeparam name="TRepository">Data repository type.</typeparam>
+/// <typeparam name="TEntityId">Database entity id type.</typeparam>
+/// <typeparam name="TEntity">Database entity type.</typeparam>
+/// <typeparam name="TDisplayModel">Display model DTO type.</typeparam>
 public abstract class
     ReadServiceBase<TRepository, TEntityId, TEntity, TDisplayModel> : IReadServiceBase<TEntityId, TDisplayModel>, IPageableService<TEntity, TEntityId, TDisplayModel>
     where TRepository : IReadRepository<TEntityId, TEntity>
@@ -24,7 +30,7 @@ public abstract class
     /// <summary>
     /// Queries the repository for an entity with the specified <paramref name="id"/> and returns a mapped DTO asynchronously.
     /// </summary>
-    /// <param name="id">Entity Id field value.</param>
+    /// <param name="id">Database entity Id.</param>
     /// <returns></returns>
     public virtual async Task<TDisplayModel> GetByIdAsync(TEntityId id)
     {
@@ -40,7 +46,7 @@ public abstract class
     }
 
     /// <summary>
-    /// Queries the repository and returns an IEnumerable of mapped DTO's
+    /// Queries the repository and returns <code>IEnumerable<typeparam name="TDisplayModel"></typeparam></code>. 
     /// </summary>
     /// <returns></returns>
     public virtual async Task<IEnumerable<TDisplayModel>> GetAllAsync()

@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LevelUp.Services.Core", "Le
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LevelUp.Services.Tests", "LevelUp.Services.Tests\LevelUp.Services.Tests.csproj", "{B72118D9-9662-4D44-BEC4-A65002F02304}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelUp.Services.EntityFrameworkCore", "LevelUp.Services.EntityFrameworkCore\LevelUp.Services.EntityFrameworkCore.csproj", "{5F4499CA-B606-4862-8C6B-0E9ECD4024D9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{B72118D9-9662-4D44-BEC4-A65002F02304}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B72118D9-9662-4D44-BEC4-A65002F02304}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B72118D9-9662-4D44-BEC4-A65002F02304}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5F4499CA-B606-4862-8C6B-0E9ECD4024D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F4499CA-B606-4862-8C6B-0E9ECD4024D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F4499CA-B606-4862-8C6B-0E9ECD4024D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F4499CA-B606-4862-8C6B-0E9ECD4024D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

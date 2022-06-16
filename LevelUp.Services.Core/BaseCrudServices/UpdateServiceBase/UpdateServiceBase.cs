@@ -8,6 +8,17 @@ using LevelUp.Services.Core.FluentValidation;
 
 namespace LevelUp.Services.Core.BaseCrudServices.UpdateServiceBase;
 
+/// <summary>
+/// CRUD services. Update service base.
+/// </summary>
+/// <typeparam name="TRepository">Data repository type.</typeparam>
+/// <typeparam name="TEntityId">Database entity id type.</typeparam>
+/// <typeparam name="TEntity">Database entity type.</typeparam>
+/// <typeparam name="TDisplayModel">Display model DTO type.</typeparam>
+/// <typeparam name="TCreateModel">Create model DTO type.</typeparam>
+/// <typeparam name="TCreateValidator">Create model fluent validator type.</typeparam>
+/// <typeparam name="TUpdateModel">Update model DTO type.</typeparam>
+/// <typeparam name="TUpdateValidator">Update model fluent validator type.</typeparam>
 public abstract class UpdateServiceBase<TRepository, TEntityId, TEntity, TDisplayModel, TCreateModel, TCreateValidator,
         TUpdateModel, TUpdateValidator>
     : CreateServiceBase<TRepository, TEntityId, TEntity, TDisplayModel, TCreateModel, TCreateValidator>,
@@ -29,6 +40,12 @@ public abstract class UpdateServiceBase<TRepository, TEntityId, TEntity, TDispla
         UpdateValidator = updateValidator;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="updateItem"></param>
+    /// <param name="id"></param>
+    /// <returns></returns>
     public async Task<ServiceActionResult<TDisplayModel>> UpdateAsync(TUpdateModel updateItem, TEntityId id)
     {
         UpdateValidator.Id = id;

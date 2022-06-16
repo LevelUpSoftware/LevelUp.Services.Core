@@ -9,6 +9,15 @@ using LevelUp.Services.Core.FluentValidation;
 
 namespace LevelUp.Services.Core.BaseCrudServices.CreateServiceBase;
 
+/// <summary>
+/// CRUD services. Create service base.
+/// </summary>
+/// <typeparam name="TRepository">Data repository type.</typeparam>
+/// <typeparam name="TEntityId">Database entity id type.</typeparam>
+/// <typeparam name="TEntity">Database entity type.</typeparam>
+/// <typeparam name="TDisplayModel">Display model DTO type.</typeparam>
+/// <typeparam name="TCreateModel">Create model DTO type.</typeparam>
+/// <typeparam name="TCreateValidator">Create model fluent validator type.</typeparam>
 public abstract class CreateServiceBase<TRepository, TEntityId, TEntity, TDisplayModel, TCreateModel, TCreateValidator> 
     : ReadServiceBase<TRepository, TEntityId, TEntity, TDisplayModel>, 
         ICreateServiceBase<TEntityId, TEntity, TDisplayModel, TCreateModel>

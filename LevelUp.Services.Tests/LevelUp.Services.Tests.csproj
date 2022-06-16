@@ -5,6 +5,8 @@
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
+
+    <IsPublishable>True</IsPublishable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,14 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ServiceTests\ReadServiceTests\Models\" />
-    <Folder Include="ServiceTests\ReadServiceTests\Mappers\" />
     <Folder Include="TestAssets\Models\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LevelUp.Services.Core\LevelUp.Services.Core.csproj" />
-    <ProjectReference Include="..\LevelUp.Services.EntityFrameworkCore\LevelUp.Services.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>
