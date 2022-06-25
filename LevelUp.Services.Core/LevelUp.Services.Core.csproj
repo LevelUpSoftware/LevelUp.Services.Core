@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
+	<RepositoryUrl>https://github.com/LevelUpSoftware/LevelUp.Services.Core</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/LevelUpSoftware/LevelUp.Services.Core</PackageProjectUrl>
+	<RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.*</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +16,6 @@
     <Folder Include="BaseCrudServices\UpdateServiceBase\" />
     <Folder Include="BaseCrudServices\ReadServiceBase\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Mappers\" />
   </ItemGroup>
 
   <ItemGroup>
