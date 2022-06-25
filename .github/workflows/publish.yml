@@ -17,11 +17,7 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
       
     - name: Run Pack
-      run: dotnet pack LevelUp.Services.Core/LevelUp.Services.Core.csproj -o ./artifacts --configuration ${{ env.config }}
+      run: dotnet pack LevelUp.Services.Core/LevelUp.Services.Core.csproj -o
       shell: bash
