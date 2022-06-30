@@ -34,6 +34,6 @@ jobs:
 
     - name: Deploy
       run: | 
-        cd ../LevelUp.Services.Core/LevelUp.Services.Core
+        cd ../LevelUp.Services.Core/LevelUp.Services.Core/bin
         dir
         
