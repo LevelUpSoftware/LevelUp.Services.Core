@@ -6,7 +6,7 @@ namespace LevelUp.Services.Core.BaseCrudServices.ServiceBase;
 
 public abstract class ServiceBase
 {
-    private readonly IConfiguration _configuration;
+    private readonly IConfiguration? _configuration;
     protected IConfiguration Configuration
     {
         get
