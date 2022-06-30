@@ -1,9 +1,10 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using LevelUp.Services.Core.CrudRepositoryInterfaces;
+using LevelUp.Services.Core.Pagination;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using LevelUp.Services.Core.Pagination;
+using Microsoft.Extensions.Configuration;
 
 namespace LevelUp.Services.Core.BaseCrudServices.ReadServiceBase;
 /// <summary>
@@ -14,11 +15,17 @@ namespace LevelUp.Services.Core.BaseCrudServices.ReadServiceBase;
 /// <typeparam name="TEntity">Database entity type.</typeparam>
 /// <typeparam name="TDisplayModel">Display model DTO type.</typeparam>
 public abstract class
-    ReadServiceBase<TRepository, TEntityId, TEntity, TDisplayModel> : IReadServiceBase<TEntityId, TDisplayModel>, IPageableService<TEntity, TEntityId, TDisplayModel>
+    ReadServiceBase<TRepository, TEntityId, TEntity, TDisplayModel> : ServiceBase.ServiceBase,  IReadServiceBase<TEntityId, TDisplayModel>, IPageableService<TEntity, TEntityId, TDisplayModel>
     where TRepository : IReadRepository<TEntityId, TEntity>
     where TEntity : class
 {
     protected ReadServiceBase(TRepository repository, IMapper mapper)
+    {
+        Repository = repository;
+        Mapper = mapper;
+    }
+
+    protected ReadServiceBase(IConfiguration configuration, TRepository repository, IMapper mapper) : base(configuration)
     {
         Repository = repository;
         Mapper = mapper;

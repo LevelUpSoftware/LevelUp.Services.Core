@@ -6,6 +6,7 @@ using LevelUp.Services.Core.BaseCrudServices.UpdateServiceBase;
 using LevelUp.Services.Core.BaseEntities;
 using LevelUp.Services.Core.CrudRepositoryInterfaces;
 using LevelUp.Services.Core.FluentValidation;
+using Microsoft.Extensions.Configuration;
 
 namespace LevelUp.Services.Core.BaseCrudServices.CrudServiceBase;
 
@@ -20,7 +21,7 @@ namespace LevelUp.Services.Core.BaseCrudServices.CrudServiceBase;
 /// <typeparam name="TCreateValidator">Create model fluent validator type.</typeparam>
 /// <typeparam name="TUpdateModel">Update model DTO type.</typeparam>
 /// <typeparam name="TUpdateValidator">Update model fluent validator type.</typeparam>
-public class CrudServiceBase<TRepository, TEntityId, TEntity, TDisplayModel, TCreateModel, TCreateValidator, TUpdateModel, TUpdateValidator> 
+public abstract class CrudServiceBase<TRepository, TEntityId, TEntity, TDisplayModel, TCreateModel, TCreateValidator, TUpdateModel, TUpdateValidator> 
     : UpdateServiceBase<TRepository, TEntityId, TEntity, TDisplayModel, TCreateModel, TCreateValidator, TUpdateModel, TUpdateValidator>,
         ICrudServiceBase<TEntityId, TEntity, TDisplayModel, TCreateModel, TUpdateModel>
 where TRepository : ICrudRepository<TEntityId, TEntity>
@@ -30,7 +31,7 @@ where TCreateValidator : AbstractValidator<TCreateModel>
 where TUpdateValidator : UpdateValidatorBase<TUpdateModel, TEntityId>
 {
 
-    public CrudServiceBase(
+    protected CrudServiceBase(
         TRepository repository,
         IMapper mapper,
         TCreateValidator createValidator,
@@ -38,6 +39,18 @@ where TUpdateValidator : UpdateValidatorBase<TUpdateModel, TEntityId>
     : base(repository, mapper, createValidator, updateValidator)
     {
     }
+
+    protected CrudServiceBase(
+        IConfiguration configuration,
+        TRepository repository,
+        IMapper mapper,
+        TCreateValidator createValidator,
+        TUpdateValidator updateValidator)
+        : base(configuration, repository, mapper, createValidator, updateValidator)
+    {
+    }
+
+
 
     /// <summary>
     /// Deletes entity with specified Id. Automatically soft delete <code>ISoftDeletable</code> entity.

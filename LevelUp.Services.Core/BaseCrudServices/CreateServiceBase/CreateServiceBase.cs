@@ -6,6 +6,7 @@ using FluentValidation;
 using LevelUp.Services.Core.BaseCrudServices.ReadServiceBase;
 using LevelUp.Services.Core.CrudRepositoryInterfaces;
 using LevelUp.Services.Core.FluentValidation;
+using Microsoft.Extensions.Configuration;
 
 namespace LevelUp.Services.Core.BaseCrudServices.CreateServiceBase;
 
@@ -32,6 +33,15 @@ public abstract class CreateServiceBase<TRepository, TEntityId, TEntity, TDispla
         IMapper mapper,
         TCreateValidator createValidator)
     : base(repository, mapper)
+    {
+        CreateValidator = createValidator;
+    }
+
+    protected CreateServiceBase(
+        IConfiguration configuration,
+        TRepository repository,
+        IMapper mapper,
+        TCreateValidator createValidator) : base(configuration, repository, mapper)
     {
         CreateValidator = createValidator;
     }

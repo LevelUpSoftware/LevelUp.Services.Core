@@ -5,6 +5,7 @@ using LevelUp.Services.Core.CrudRepositoryInterfaces;
 using System.Linq;
 using System.Threading.Tasks;
 using LevelUp.Services.Core.FluentValidation;
+using Microsoft.Extensions.Configuration;
 
 namespace LevelUp.Services.Core.BaseCrudServices.UpdateServiceBase;
 
@@ -38,6 +39,18 @@ public abstract class UpdateServiceBase<TRepository, TEntityId, TEntity, TDispla
         : base(repository, mapper, createValidator)
     {
         UpdateValidator = updateValidator;
+    }
+
+    protected UpdateServiceBase(
+        IConfiguration configuration,
+        TRepository repository,
+        IMapper mapper,
+        TCreateValidator createValidator,
+        TUpdateValidator updateValidator)
+        : base(configuration, repository, mapper, createValidator)
+    {
+        UpdateValidator = updateValidator;
+
     }
 
     /// <summary>
