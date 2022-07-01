@@ -15,7 +15,7 @@ There are several base classes you can derive from depending on what CRUD method
 
 ### ServiceBase
 
-    ServiceBase is the lowest level class from which all services are derived. It has the option to inject an IConfiguration instance, making the application configuration available in any service.
+ServiceBase is the lowest level class from which all services are derived. It has the option to inject an IConfiguration instance, making the application configuration available in any service.
 
 Usage Sample:
 
