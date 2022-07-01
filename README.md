@@ -12,7 +12,7 @@ There are several base classes you can derive from depending on what CRUD method
 </br>
 </br>
 </br>
-### <u>ServiceBase</u>
+### ServiceBase
 
     ServiceBase is the lowest level class from which all services are derived. It has the option to inject an IConfiguration instance, making the application configuration available in any service.
 
@@ -51,7 +51,7 @@ All services derived from   ServiceBase have the option to inject   IConfigurati
 
 </br>
 
-### <u>ReadServiceBase</u>
+### ReadServiceBase
 
 Methods
 </br>
@@ -93,7 +93,7 @@ public class CustomerService : ReadServiceBase<CustomerSqlRepository, long, DB_C
 ```
 </br>
 
-### <u>CreateServiceBase</u>
+### CreateServiceBase
 
 Methods
 </br>
@@ -152,7 +152,7 @@ public class CustomerService : CreateService<CustomerSqlRepository, long, DB_Cus
 }
 ```
 
-### <u>UpdateServiceBase</u>
+### UpdateServiceBase
 
 Methods
 </br>
@@ -214,7 +214,7 @@ public class CustomerService : UpdateServiceBase<CustomerSqlRepository, long, DB
 }
 ```
 
-### <u>CrudServiceBase</u>
+### CrudServiceBase
 
 Implements methods from all the other CRUD base services plus DeleteAsync().
 
