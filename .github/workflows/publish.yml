@@ -34,6 +34,6 @@ jobs:
 
     - name: Deploy
       run: | 
-        cd ../LevelUp.Services.Core/LevelUp.Services.Core/bin/Release
+        cd ../LevelUp.Services.Core/LevelUp.Services.Core/bin/Release/net6.0
         dir
         
